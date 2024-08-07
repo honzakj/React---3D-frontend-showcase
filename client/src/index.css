@@ -4,8 +4,25 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #161616;
+
+  --glow1: conic-gradient(
+    from 10deg at 50% 50%,
+    #eb74cf 0deg,
+    #132761 55deg,
+    #22436b 120deg,
+    #4ec2e9 160deg,
+    transparent 360deg
+  );
+
+  --glow2: conic-gradient(
+    from 90deg at 50% 50%,
+    #f6bbff 0deg,
+    #b38ce9f7 160deg,
+    #7bebff 120deg,
+    #113872 55deg,
+    transparent 360deg
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,7 +41,7 @@ body {
   min-width: 320px;
 }
 
-h1, h2 {
+h1, h2, p {
   padding: 0;
   margin: 0;
 }
@@ -32,10 +49,10 @@ h1, h2 {
 main {
   width: 100%;
   position: absolute;
-  top: 75px;
-  padding: 0 25px;
-  height: calc(100% - 75px);
+  z-index: 1;
 }
+
+
 
 .flex {
   display: flex;
@@ -57,3 +74,21 @@ main {
 .flex-justify-center {
   justify-content: center;
 }
+
+
+
+  .h-100 {
+    height: 100%;
+  }
+
+  .h-50 {
+    height: 50%;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .w-50 {
+    width: 50%;
+  }

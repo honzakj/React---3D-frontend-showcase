@@ -1,0 +1,19 @@
+nav {
+    position: fixed;
+right: 24px;
+background: rgba(0, 0, 0, 0.3);
+border-radius: 15px;
+z-index: 2;
+gap: 24px;
+padding: 12px;
+backdrop-filter: blur(8px);
+pointer-events: all;
+}
+
+nav .navButton {
+    all: unset;
+width: 20px;
+height: 20px;
+cursor: pointer;
+
+}

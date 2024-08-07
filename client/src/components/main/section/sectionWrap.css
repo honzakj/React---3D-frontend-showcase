@@ -1,0 +1,9 @@
+.section-name {
+    font-size: .8em;
+}
+
+.section-title {
+    font-size: 1.8em;
+    margin-top: 50px;
+    white-space: pre-line;
+}
