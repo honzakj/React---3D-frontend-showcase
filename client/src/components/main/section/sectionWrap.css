@@ -1,3 +1,8 @@
+section {
+    position: relative;
+
+}
+
 .section-name {
     font-size: .8em;
 }
@@ -6,4 +11,12 @@
     font-size: 1.8em;
     margin-top: 50px;
     white-space: pre-line;
+}
+
+.section-content {
+    width: 100%;
+    height: -webkit-fill-available;
+    max-width: 1210px;
+    margin: 120px 0;
+    
 }

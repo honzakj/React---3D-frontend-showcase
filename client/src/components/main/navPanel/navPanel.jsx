@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const NavPanel = ({ scrollToSection }) => {
     const navItems = ['domů', 'co nabízím', 'portfolio', 'kontakt']
+
     const [hoverIndex, setHover] = useState(null)
 
     const iconComponents = [
@@ -19,7 +20,6 @@ const NavPanel = ({ scrollToSection }) => {
         <nav className='flex flex-column flex-justify-between flex-align-end'>
             {navItems.map((item, index) => {
                 return (
-
                     <div className="flex flex-justify-end flex-align-center" style={{ position: 'relative' }}>
                         <p className="nav-text" style={{ opacity: hoverIndex === index ? 1 : 0 }}>{item}</p>
 

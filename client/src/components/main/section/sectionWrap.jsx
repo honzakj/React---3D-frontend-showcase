@@ -2,28 +2,12 @@ import { forwardRef } from 'react'
 import './sectionWrap.css'
 
 
-const SectionWrap = forwardRef(({ name, title, bckgCol, height, textCol, children }, ref) => {
-    const sectionStyle = {
-        position: 'relative',
-        width: '100%',
-        height: height && height,
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        background: bckgCol && bckgCol,
-        color: textCol && textCol
-    }
-
-    const sectionContentStyle = {
-        width: '100%',
-        height: '-webkit-fill-available',
-        maxWidth: '1210px',
-        margin: '120px 0'
-    }
+const SectionWrap = forwardRef(({ name, title, children, sectionStyle }, ref) => {
 
 
     return (
-        <section ref={ref} className='flex' style={sectionStyle}>
-            <div className='sectionContent flex-column' style={sectionContentStyle}>
+        <section ref={ref} className='flex flex-justify-center w-100' style={sectionStyle}>
+            <div className='section-content flex-column'>
                 {name &&
                     <p className='section-name'>{name}</p>
                 }

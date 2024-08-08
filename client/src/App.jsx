@@ -1,19 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { GlobalCanvas, SmoothScrollbar, UseCanvas, ViewportScrollScene } from '@14islands/r3f-scroll-rig'
-import { useFrame, useThree } from '@react-three/fiber'
+import React, { useEffect, useRef, useState } from 'react';
+import { GlobalCanvas, SmoothScrollbar, UseCanvas, ViewportScrollScene } from '@14islands/r3f-scroll-rig';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Grid, useFBX } from '@react-three/drei';
+import { MeshNormalMaterial } from 'three';
+import { SocialIcon } from 'react-social-icons';
 
 import SectionWrap from './components/main/section/sectionWrap';
-
-import Header from './components/main/header/header'
-
-import { MeshNormalMaterial } from 'three';
+import Header from './components/main/header/header';
+import Footer from './components/main/footer/footer';
 import BackgroundAnim from './components/main/background/background';
-
-import './App.css'
 import NavPanel from './components/main/navPanel/navPanel';
-import { SocialIcon } from 'react-social-icons';
+
 import Button from './components/functional/button/button';
+
+import './App.css';
+
 
 
 function App() {
@@ -23,8 +24,17 @@ function App() {
   const mainRef = useRef(null)
 
   const scrollToSection = (index) => {
+    const urlItems = ['home', 'services', 'portfolio', 'contact']
+
     setActiveNav(index)
     sectionRefs.current[index].scrollIntoView({ behavior: 'smooth' })
+    window.location.hash = urlItems[index]
+
+  }
+
+  const sectionStyleOverride = {
+    backgroundColor: '#fff',
+    color: '#262626'
   }
 
   return (
@@ -39,32 +49,36 @@ function App() {
           {(bind) => (
 
             <div {...bind} style={{ zIndex: 5 }}>
-              <SectionWrap ref={(el) => { sectionRefs.current[0] = el }} bckgCol={'rgba(0,0,0,0'} height={'910px'}>
+              <SectionWrap ref={(el) => { sectionRefs.current[0] = el }} sectionStyle={{ height: '910px' }}>
 
                 <Header />
                 <HeroContent scrollToSection={scrollToSection} />
 
               </SectionWrap>
 
-              <SectionWrap bckgCol={'#fff'} name={'KDO JSEM?'} title='Jsem architekt věnující se digitální tvorbě, CGI a programmingu' height={'900px'} textCol={'#262626'}>
+              <SectionWrap name={'KDO JSEM?'} title='Jsem architekt věnující se digitální tvorbě, CGI a programmingu' sectionStyle={{ ...sectionStyleOverride, height: '910px' }}>
 
               </SectionWrap>
 
-              <SectionWrap ref={(el) => { sectionRefs.current[1] = el }} bckgCol={'transparent'} name={'CO NABÍZÍM?'} title={"Proměňuji digitální vize ve skutečnost."} height={'70vh'}>
 
+              <SectionWrap ref={(el) => { sectionRefs.current[1] = el }} name={'CO NABÍZÍM?'} title={'Proměňuji digitální vize ve skutečnost.'} sectionStyle={{ height: '70vh' }}>
 
               </SectionWrap>
 
-              <SectionWrap ref={(el) => { sectionRefs.current[2] = el }} bckgCol={'#fff'} name={'UKÁZKY PRÁCE'} textCol={'#262626'} height={'100vh'}>
+
+              <SectionWrap ref={(el) => { sectionRefs.current[2] = el }} name={'UKÁZKY PRÁCE'} sectionStyle={{ ...sectionStyleOverride, height: '100vh' }}>
               </SectionWrap>
 
-              <SectionWrap bckgCol={'#fff'} name={'MOJI KLIENTI'} textCol={'#262626'} height={'550px'}>
+
+              <SectionWrap name={'MOJI KLIENTI'} sectionStyle={{ ...sectionStyleOverride, height: '550px' }}>
               </SectionWrap>
 
-              <SectionWrap ref={(el) => { sectionRefs.current[3] = el }} bckgCol={'transparent'} name={'KONTAKT'} title={"Máte zájem o spolupráci?\n Neváhejte mě kontaktovat"} height={'70vh'}>
+
+              <SectionWrap ref={(el) => { sectionRefs.current[3] = el }} name={'KONTAKT'} title={"Máte zájem o spolupráci?\n Neváhejte mě kontaktovat"} sectionStyle={{ height: '70vh' }}>
                 <ContactContent />
                 <Footer scrollToSection={scrollToSection} />
               </SectionWrap>
+
             </div>
           )}
         </SmoothScrollbar>
@@ -117,8 +131,6 @@ const ContactContent = () => {
   const iconOpts = ['facebook', 'instagram', 'x', 'github']
   const optNames = ['messenger', 'instagram', 'twitter', 'github']
 
-
-
   return (
     <div className='flex w-100 h-100'>
       <InfoWrap title={'Kontaktujte mě'}>
@@ -147,25 +159,6 @@ const ContactContent = () => {
   )
 }
 
-
-
-const Footer = ({ scrollToSection }) => {
-  const footerStyle = {
-    position: 'absolute',
-    bottom: '12px',
-    maxWidth: '1210px',
-    fontWeight: 400,
-    fontSize: '.8em',
-    borderTop: '1px solid #fff',
-    paddingTop: '12px'
-  }
-  return (
-    <footer className='w-100 flex flex-justify-between flex-align-center' style={footerStyle}>
-      <Button text='scroll up' filled clickHandler={() => scrollToSection(0)} />
-      <p> 2024 © Jiří Honzák</p>
-    </footer>
-  )
-}
 
 const RenderComponent = () => {
   const el = useRef()
