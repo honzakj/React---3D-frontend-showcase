@@ -2088,6 +2088,11 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"
   "version" "0.14.2"
 
+"react-responsive-masonry@^2.3.0":
+  "integrity" "sha512-ttb71B75qAfZ5q2CRLKRnCRO9V6p1Vkgw1C9wIeNaD2JpAxwCb1hUBI4Drqea9hNlvxxLpUkO0TRE5CLxqLY0A=="
+  "resolved" "https://registry.npmjs.org/react-responsive-masonry/-/react-responsive-masonry-2.3.0.tgz"
+  "version" "2.3.0"
+
 "react-social-icons@^6.17.0":
   "integrity" "sha512-NO2EcGlXdEf8a5gOnn8BMtda+jErMk/ghnp0ahqFFolXHV/X923wtRyCuO57gQHVX1sjTexvEXiQjEVzX36dlw=="
   "resolved" "https://registry.npmjs.org/react-social-icons/-/react-social-icons-6.17.0.tgz"

@@ -20,7 +20,7 @@ const NavPanel = ({ scrollToSection }) => {
         <nav className='flex flex-column flex-justify-between flex-align-end'>
             {navItems.map((item, index) => {
                 return (
-                    <div className="flex flex-justify-end flex-align-center" style={{ position: 'relative' }}>
+                    <div key={'nav_option_' + index} className="flex flex-justify-end flex-align-center" style={{ position: 'relative' }}>
                         <p className="nav-text" style={{ opacity: hoverIndex === index ? 1 : 0 }}>{item}</p>
 
                         <button className="nav-button hover-scale-animation" key={'navItem_' + index}

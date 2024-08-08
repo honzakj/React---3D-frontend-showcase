@@ -1,6 +1,6 @@
 section {
     position: relative;
-
+    overflow-x: hidden;
 }
 
 .section-name {
@@ -18,5 +18,6 @@ section {
     height: -webkit-fill-available;
     max-width: 1210px;
     margin: 120px 0;
+
     
 }
