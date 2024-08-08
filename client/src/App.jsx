@@ -4,6 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { Grid, useFBX } from '@react-three/drei';
 import { MeshNormalMaterial } from 'three';
 import { SocialIcon } from 'react-social-icons';
+import { Tilt } from 'react-tilt'
 
 import SectionWrap from './components/main/section/sectionWrap';
 import Header from './components/main/header/header';
@@ -61,8 +62,9 @@ function App() {
               </SectionWrap>
 
 
-              <SectionWrap ref={(el) => { sectionRefs.current[1] = el }} name={'CO NABÍZÍM?'} title={'Proměňuji digitální vize ve skutečnost.'} sectionStyle={{ height: '70vh' }}>
+              <SectionWrap ref={(el) => { sectionRefs.current[1] = el }} name={'CO NABÍZÍM?'} title={'Proměňuji digitální vize ve skutečnost.'} >
 
+                <WhoAmIContent />
               </SectionWrap>
 
 
@@ -87,6 +89,62 @@ function App() {
       </main >
 
     </>
+  )
+}
+
+const WhoAmIContent = () => {
+  const tiltOptions = {
+    reverse: true,
+    max: 25,
+    perspective: 1500,
+    speed: 500,
+    scale: 1,
+    transition: true,
+    reset: true
+  }
+
+  const cardsData = [
+    {
+      name: 'Design',
+      text: 'Vytvářím design všeho druhu. Od uživatelských prostředí a aplikací, přes nábytek, až po celé stavby',
+      points: ['UI/UX design', 'Procedurální design', 'olala']
+    },
+    {
+      name: 'Architektura',
+      text: 'Navrhuji moderní, udržitelnou architekturu na základě dat. Vytvářím parametrické definice aplikovatelné v různých kontextech.',
+      points: ['Parametrický design', 'Digitální fabrikace', '3D modelování', 'vizualizace']
+    },
+    {
+      name: 'Development',
+      text: 'Vyvíjím inovativní aplikace šité na míru dle vašich potřeb. ',
+      points: ['Front-end development', 'Back-end development', 'Webové aplikace']
+    }
+  ]
+
+  return (
+
+    <div className='flex flex-align-center w-100' style={{ gap: '24px', marginTop: '96px' }}>
+
+      {cardsData.map((dataObj, index) => {
+        return (
+          <Tilt options={tiltOptions} className={'flex-column'} style={{ width: '100%', aspectRatio: '2.2 / 3', background: 'rgba(0, 0, 0, 0.3)', borderRadius: '15px', padding: '48px' }}>
+            <h3 style={{ fontWeight: 500, marginBottom: '32px' }}>{dataObj.name}</h3>
+            <p style={{ marginBottom: '64px' }}>
+              {dataObj.text}
+            </p>
+
+            <ul>
+              {dataObj.points.map((point, index) => {
+                return (
+                  <li key={`card_${dataObj.name}_${index}`}>{point}</li>
+                )
+              })}
+            </ul>
+          </Tilt >
+        )
+      })}
+    </div >
+
   )
 }
 
