@@ -10,10 +10,25 @@ backdrop-filter: blur(8px);
 pointer-events: all;
 }
 
-nav .navButton {
+
+nav .nav-button {
     all: unset;
 width: 20px;
 height: 20px;
 cursor: pointer;
+}
 
+
+
+nav .nav-text {
+    text-align: right;
+    font-weight: 300;
+    position: absolute;
+    width: max-content;
+    transform: translate(-40px, 0);
+    transition: opacity 200ms ease-in-out;
+    pointer-events: none;
+    background: rgba(0,0,0,0.3);
+    padding: 4px 12px;
+    border-radius: 10px;
 }

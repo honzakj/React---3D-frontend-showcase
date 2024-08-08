@@ -13,6 +13,7 @@ import BackgroundAnim from './components/main/background/background';
 import './App.css'
 import NavPanel from './components/main/navPanel/navPanel';
 import { SocialIcon } from 'react-social-icons';
+import Button from './components/functional/button/button';
 
 
 function App() {
@@ -98,7 +99,7 @@ const HeroContent = ({ scrollToSection }) => {
   )
 }
 
-const ContactContent = ({ scrollToSection }) => {
+const ContactContent = () => {
 
   const InfoWrap = ({ title, children }) => {
     const wrapStyle = {
@@ -146,24 +147,7 @@ const ContactContent = ({ scrollToSection }) => {
   )
 }
 
-const Button = ({ text, icon, filled, clickHandler }) => {
-  const buttonStyle = {
-    all: 'unset',
-    background: filled ? '#fff' : null,
-    border: `2px solid #fff`,
-    borderRadius: '15px',
-    padding: icon ? '0 16px 0 2px' : '8px 24px',
-    color: filled && '#000',
-    cursor: 'pointer'
-  }
 
-  return (
-    <button className='flex' style={buttonStyle} onClick={clickHandler}>
-      {icon && icon}
-      {text}
-    </button>
-  )
-}
 
 const Footer = ({ scrollToSection }) => {
   const footerStyle = {
@@ -178,7 +162,7 @@ const Footer = ({ scrollToSection }) => {
   return (
     <footer className='w-100 flex flex-justify-between flex-align-center' style={footerStyle}>
       <Button text='scroll up' filled clickHandler={() => scrollToSection(0)} />
-      <p> 2024 © </p>
+      <p> 2024 © Jiří Honzák</p>
     </footer>
   )
 }

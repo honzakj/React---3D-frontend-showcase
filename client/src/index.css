@@ -67,6 +67,10 @@ main {
   align-items: center;
 }
 
+.flex-align-end {
+  align-items: flex-end;
+}
+
 .flex-justify-between {
   justify-content: space-between;
 }
@@ -74,7 +78,9 @@ main {
 .flex-justify-center {
   justify-content: center;
 }
-
+.flex-justify-end {
+  justify-content: flex-end;
+}
 
 
   .h-100 {
@@ -92,3 +98,14 @@ main {
   .w-50 {
     width: 50%;
   }
+
+  .hover-scale-animation:hover {
+    transition: scale 200ms ease-in-out;
+  }
+
+  .hover-scale-animation:hover {
+    scale: 1.1;
+  }
+
+
+  
