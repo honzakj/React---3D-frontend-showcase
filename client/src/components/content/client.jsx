@@ -16,7 +16,7 @@ const clientsData = [{
     author: 'Lorem Ipsum 3'
 }]
 
-export const ClientSection = () => {
+export const ClientContent = () => {
 
     useEffect(() => {
         //Tady bych dal požadavek skrz API na data z databáze

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { CustomButton } from "../functional/button"
 import { MasonryWrap } from "../functional/masonry"
 import { TiltWrap } from "../functional/tiltWrap"
+import { Card } from "../functional/card"
 
 const portfolioData = [{
     projectName: 'projekt 1',
@@ -69,13 +70,11 @@ const ProjectCard = ({ imgSrc, name, category }) => {
 
     return (
         <TiltWrap style={{ all: 'unset' }}>
-            <div
-                className='flex'
-                style={{ borderRadius: '15px', overflow: 'hidden', position: 'relative', cursor: 'pointer', boxShadow: 'rgba(0, 0, 0, 0.3) 8px 8px 16px', }}
-                onMouseEnter={(e) => setHovering(true)}
-                onMouseLeave={(e) => setHovering(false)}
-            >
-                <div className="h-100 w-100" style={{ position: 'absolute', background: 'rgba(0,0,0,0.3)', opacity: isHovering ? 1 : 0, transition: 'opacity 300ms ease-in-out' }}>
+            <Card>
+                <div className="h-100 w-100"
+                    style={{ position: 'absolute', background: 'rgba(0,0,0,0.3)', opacity: isHovering ? 1 : 0, transition: 'opacity 300ms ease-in-out', cursor: 'pointer', }}
+                    onMouseEnter={(e) => setHovering(true)}
+                    onMouseLeave={(e) => setHovering(false)}>
                     <div className='flex-column w-100' style={{ position: 'absolute', alignSelf: 'flex-end', color: '#fff', padding: '24px' }}>
                         <p>{category}</p>
                         <h3>{name}</h3>
@@ -86,8 +85,9 @@ const ProjectCard = ({ imgSrc, name, category }) => {
                     src={imgSrc}
                     style={{ height: 'auto', width: '100%' }}
                 />
-            </div>
+            </Card>
         </TiltWrap>
 
     )
 }
+

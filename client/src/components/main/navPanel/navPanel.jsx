@@ -1,4 +1,4 @@
-import { FaUser, FaHome, FaPhone } from "react-icons/fa";
+import { FaUser, FaHome, FaPhone, FaPencilRuler } from "react-icons/fa";
 import { RiLayoutMasonryFill } from "react-icons/ri";
 
 import './navPanel.css'
@@ -13,8 +13,13 @@ const NavPanel = ({ scrollToSection }) => {
         icon: <FaHome className="w-100 h-100" />
     },
     {
-        name: 'co nabízím',
+        name: 'o mně',
         icon: <FaUser className="w-100 h-100" />,
+
+    },
+    {
+        name: 'služby',
+        icon: <FaPencilRuler className="w-100 h-100" />,
 
     },
     {
