@@ -11,8 +11,8 @@ export const HeroContent = ({ scrollToSection }) => {
                 <p style={{ fontSize: '1.5em', fontWeight: 300, margin: '32px 0 64px 0' }}>Architektura, procedurální design a vývoj aplikací</p>
 
                 <div className='flex' style={{ gap: '12px' }}>
-                    <CustomButton text='Kontaktujte mě' filled clickHandler={(e) => scrollToSection(3)} />
-                    <CustomButton text='Co nabízím?' clickHandler={(e) => scrollToSection(1)} />
+                    <CustomButton text='Kontaktujte mě' filled clickHandler={(e) => scrollToSection(4)} />
+                    <CustomButton text='Co nabízím?' clickHandler={(e) => scrollToSection(2)} />
                 </div>
 
             </div>

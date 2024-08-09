@@ -11,7 +11,7 @@ export const CustomButton = ({ text, icon, filled, inversed, clickHandler, style
     }
 
     return (
-        <button className='flex button-custom' style={buttonStyle} onClick={clickHandler}>
+        <button className='flex button-custom hover-scale-animation' style={buttonStyle} onClick={clickHandler}>
             {icon && icon}
             {text}
         </button>

@@ -61,6 +61,7 @@ const App = () => {
 
               <SectionWrap ref={(el) => { sectionRefs.current[2] = el }} name={'CO NABÍZÍM?'} title={'Proměňuji digitální vize ve skutečnost.'} contentStyle={{ margin: '150px 0 64px 0' }} >
                 <ServicesContent />
+
               </SectionWrap>
 
               <SectionWrap name={'CO ŘÍKAJÍ KLIENTI?'} fullWidth contentStyle={{ margin: '64px 0 150px 0' }}>

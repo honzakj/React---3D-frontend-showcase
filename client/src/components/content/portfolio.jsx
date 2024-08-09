@@ -5,41 +5,40 @@ import { TiltWrap } from "../functional/tiltWrap"
 import { Card } from "../functional/card"
 
 const portfolioData = [{
-    projectName: 'projekt 1',
-    imgSrc: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'architektura',
+    projectName: 'Židle',
+    imgSrc: "img/zidle.JPG",
+    projectCategory: 'Design',
     projectDescription: 'lorem ipsum'
 },
 {
-    projectName: 'webovka 1',
-    imgSrc: "https://images.pexels.com/photos/1309897/pexels-photo-1309897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'programming',
+    projectName: 'Café Stalingrad',
+    imgSrc: "img/cafe_stalingrad.jpg",
+    projectCategory: 'Architektura',
+    projectDescription: 'Podhled kavárny vznikl degitálním přepisem místní morfologie terénu'
+}, {
+    projectName: 'Návrh lehátka',
+    imgSrc: "img/lehatko.png",
+    projectCategory: 'Design',
+    projectDescription: 'lorem ipsum'
+}, {
+    projectName: 'Arborista Lakkis',
+    imgSrc: "img/lakkis.jpg",
+    projectCategory: 'Web development',
     projectDescription: 'lorem ipsum'
 },
 {
-    projectName: 'webovka 2',
-    imgSrc: "https://images.pexels.com/photos/1029611/pexels-photo-1029611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'programming',
+    projectName: 'Návrh bytového domu',
+    imgSrc: "img/plakat.png",
+    projectCategory: 'Architektura',
+    projectDescription: 'lorem ipsum'
+}, {
+    projectName: 'Terminál kavárny',
+    imgSrc: "img/cafeRobot.jpg",
+    projectCategory: 'UI/UX',
     projectDescription: 'lorem ipsum'
 },
-{
-    projectName: 'nábytek 1',
-    imgSrc: "https://images.pexels.com/photos/417273/pexels-photo-417273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'design',
-    projectDescription: 'lorem ipsum'
-},
-{
-    projectName: 'nábytek 2',
-    imgSrc: "https://images.pexels.com/photos/1774931/pexels-photo-1774931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'design',
-    projectDescription: 'lorem ipsum'
-},
-{
-    projectName: 'projekt 1',
-    imgSrc: "https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    projectCategory: 'architektura',
-    projectDescription: 'lorem ipsum'
-}]
+
+]
 
 export const PortfolioContent = () => {
     useEffect(() => {
@@ -72,7 +71,7 @@ const ProjectCard = ({ imgSrc, name, category }) => {
         <TiltWrap style={{ all: 'unset' }}>
             <Card>
                 <div className="h-100 w-100"
-                    style={{ position: 'absolute', background: 'rgba(0,0,0,0.3)', opacity: isHovering ? 1 : 0, transition: 'opacity 300ms ease-in-out', cursor: 'pointer', }}
+                    style={{ position: 'absolute', background: 'rgba(0,0,0,0.4)', opacity: isHovering ? 1 : 0, transition: 'opacity 300ms ease-in-out', cursor: 'pointer', }}
                     onMouseEnter={(e) => setHovering(true)}
                     onMouseLeave={(e) => setHovering(false)}>
                     <div className='flex-column w-100' style={{ position: 'absolute', alignSelf: 'flex-end', color: '#fff', padding: '24px' }}>

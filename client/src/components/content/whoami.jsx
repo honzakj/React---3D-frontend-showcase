@@ -1,15 +1,13 @@
 import { Card } from '../functional/card'
 
 
-
 const whoamiData = [{
     imgSrc: 'https://images.pexels.com/photos/1309897/pexels-photo-1309897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi dolor, consequat vitae sodales ut, pharetra in orci. Proin malesuada tellus urna. Sed iaculis in dui vitae finibus. Morbi blandit leo nec lorem lobortis accumsan. Nulla convallis justo mi, a eleifend velit pretium nec. Nunc gravida et elit ac lacinia. In vehicula risus magna. Aenean vitae mattis sapien, quis molestie arcu. Cras lobortis magna mauris, a bibendum nibh sodales ac. Praesent ut lorem interdum, accumsan ex id, cursus lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis vehicula diam. Morbi justo libero, dignissim sit amet arcu at, cursus convallis est. Praesent venenatis odio non tortor laoreet vestibulum.'
+    text: 'Jmenuji se Jiří Honzák a mým zájmem je propojování světa architektury a designu s digitální tvorbou. Programování se věnuji od svých 15 let. V roce 2017 jsem se vydal na dlouhou, ale nesmírně zajímavou cestu studia architektury, v rámci kterého jsem snažil o propojení s již získanými vědomostmi. Díky tomu jsem propadl hluboké vášni k parametrickému designu a počítačové grafice. Mým cílem je vytvářet inovativní a esteticky působivé projekty, které spojují technologii s uměním. Mým štětcem je nejen tužka, ale také počítačový kód.'
 },
 {
     imgSrc: 'https://images.pexels.com/photos/210158/pexels-photo-210158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi dolor, consequat vitae sodales ut, pharetra in orci. Proin malesuada tellus urna. Sed iaculis in dui vitae finibus. Morbi blandit leo nec lorem lobortis accumsan. Nulla convallis justo mi, a eleifend velit pretium nec. Nunc gravida et elit ac lacinia. In vehicula risus magna. Aenean vitae mattis sapien, quis molestie arcu. Cras lobortis magna mauris, a bibendum nibh sodales ac. Praesent ut lorem interdum, accumsan ex id, cursus lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis vehicula diam. Morbi justo libero, dignissim sit amet arcu at, cursus convallis est. Praesent venenatis odio non tortor laoreet vestibulum.'
-
+    text: 'Na svém kontě mám řadu projektů - jak digitálních, tak těch fyzických. V rámci programmingu se věnuji zejména full-stack web developmentu, pochlubit se však mohu i interaktivními instalacemi např. v kavárně Brněnského Umělecko-průmyslového muzea, nebo menšími IOT projekty do domácností. Fyzické projekty obvykle tvořím jako součást větších celků ve spolupráci se známými architektonickými studii, popřípadě jen tak pro radost. '
 }]
 
 export const WhoamiContent = () => {
@@ -17,7 +15,7 @@ export const WhoamiContent = () => {
         <div className='w-100 flex-column' >
             {whoamiData.map((data, index) => {
                 return (
-                    <ImgText flip={index % 2 !== 0} imgSrc={data.imgSrc} text={data.text} />
+                    <ImgText flip={index % 2 !== 0} imgSrc={data.imgSrc} text={data.text} title={data.title} />
 
                 )
             })}
@@ -25,7 +23,7 @@ export const WhoamiContent = () => {
     )
 }
 
-const ImgText = ({ flip, text, imgSrc }) => {
+const ImgText = ({ flip, text, imgSrc, title }) => {
 
     const ImgPart = () => (
         <div className='w-50 flex'>
@@ -36,13 +34,16 @@ const ImgText = ({ flip, text, imgSrc }) => {
     )
 
     const TextPart = () => (
-        <div className='w-50 flex-column'>
-            <p style={{ textAlign: flip ? 'right' : 'left' }}>{text}</p>
+        <div className='w-50 flex-column flex-justify-center' style={{ textAlign: flip ? 'right' : 'left' }}>
+            {title &&
+                <h3 style={{ marginBottom: '24px' }}>{title}</h3>
+            }
+            <p >{text}</p>
         </div>
     )
 
     return (
-        <div className="flex" style={{ margin: '64px 0', gap: '64px' }}>
+        <div className="flex" style={{ margin: '64px 0', gap: '40px' }}>
             {flip ?
                 <>
                     <TextPart />
