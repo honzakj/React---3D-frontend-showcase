@@ -1,23 +1,21 @@
 import { useRef, useEffect } from 'react';
 import { UseCanvas, ViewportScrollScene } from '@14islands/r3f-scroll-rig';
 
-import { useFrame, useThree } from '@react-three/fiber';
-import { Grid, PerspectiveCamera, useFBX } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { PerspectiveCamera, useFBX } from '@react-three/drei';
 import { MeshNormalMaterial } from 'three';
 
 
 
-export const RenderComponent = () => {
-    const el = useRef()
-    const wrapStyle = {
-        position: 'absolute',
-    }
+export const RenderViewportScene = () => {
+    const trackElRef = useRef()
 
     return (
         <>
-            <div className={'ScrollScene Placeholder flex flex-justify-center flex-align-center h-100 w-100'} style={wrapStyle} ref={el}></div>
+            <div className={'flex flex-justify-center flex-align-center h-100 w-100'} style={{ position: 'absolute' }} ref={trackElRef}></div>
+
             <UseCanvas>
-                <ViewportScrollScene track={el}>
+                <ViewportScrollScene track={trackElRef}>
                     {(props) => (
                         <RenderTrackedMesh {...props} />
                     )}
@@ -27,38 +25,30 @@ export const RenderComponent = () => {
     )
 }
 
-const zoomCamera = (camera, zoomFactor) => {
-    camera.position.x *= zoomFactor;
-    camera.position.y *= zoomFactor;
-    camera.position.z *= zoomFactor;
-}
-
 const RenderTrackedMesh = ({ scale, scrollState }) => {
-    const fbx = useFBX('models/temp_export.fbx')
+    const fbx = useFBX('models/people.fbx')
     const Material = new MeshNormalMaterial()
-    const mesh = useRef()
-
-    const { camera } = useThree()
+    const meshRef = useRef()
 
     useEffect(() => {
-        fbx.children.forEach((mesh) => {
-            mesh.material = Material
-            fbx.position.set(-160, -80, 150)
+        fbx.children.forEach((meshRef) => {
+            meshRef.material = Material
+            fbx.position.set(-160, -60, 150)
         })
 
-    }, [mesh])
+    }, [meshRef])
 
 
-    useFrame(() => (mesh.current.rotation.y = -(scrollState.progress * Math.PI) + Math.PI / 2))
+    useFrame(() => (meshRef.current.rotation.y = -(scrollState.progress * Math.PI) + Math.PI / 2))
 
     return (
         <>
             <group >
 
-                <mesh ref={mesh}>
+                <mesh ref={meshRef}>
                     <primitive object={fbx} />
                 </mesh>
-                <PerspectiveCamera fov={45} position={[150, 250, 850]} makeDefault onUpdate={(self) => self.lookAt(0, 0, 0)} />
+                <PerspectiveCamera fov={45} position={[150, 250, 900]} makeDefault onUpdate={(self) => self.lookAt(0, 0, 0)} />
             </group>
         </>
     )

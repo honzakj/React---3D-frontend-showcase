@@ -1,35 +1,31 @@
 import { SocialIcon } from "react-social-icons"
-import Button from "../functional/button/button"
+import { CustomButton } from "../functional/button"
 
-const ContactContent = () => {
-
-    const InfoWrap = ({ title, children }) => {
-        return (
-            <div className='flex-column w-50 h-100' style={{ marginTop: '96px' }}>
-                <h2 style={{ fontWeight: 500, fontSize: '1.3em', marginBottom: '12px' }}>{title}</h2>
-                {children}
-            </div>
-        )
-    }
+export const ContactContent = () => {
 
     const buttonsData = [
         {
-            name: 'facebook',
-            text: 'messenger'
+            iconName: 'facebook',
+            text: 'messenger',
+            url: 'https://m.me/jirka.honzak'
         }, {
-            name: 'instagram',
-            text: 'instagram'
+            iconName: 'instagram',
+            text: 'instagram',
+            url: 'https://instagram.com/honzatedajirka'
         }, {
-            name: 'x',
-            text: 'twitter'
+            iconName: 'x',
+            text: 'twitter',
+            url: 'https://x.com/HonzakJi?t=Bwipqs98eBv40onmpdtDMA&s=09'
         }, {
-            name: 'github',
-            text: 'github'
+            iconName: 'github',
+            text: 'github',
+            url: 'https://github.com/honzakj'
         },
     ]
 
     return (
         <div className='flex w-100 h-100'>
+
             <InfoWrap title={'Kontaktujte mě'}>
                 <p style={{ fontWeight: 300, marginBottom: '24px' }}>honzak.jirka@gmail.com</p>
                 <p style={{ fontWeight: 300 }}>
@@ -41,21 +37,29 @@ const ContactContent = () => {
             </InfoWrap>
 
             <InfoWrap title={'Sociální sítě'}>
+
                 <div className='flex' style={{ gap: '12px' }}>
+                    {buttonsData.map((buttonData, index) => {
 
-                    {buttonsData.map((data, index) => {
-
-                        const icon = <SocialIcon bgColor={'transparent'} network={data.name} fgColor={'#fff'} style={{ height: 40, width: 40 }} />
+                        const icon = <SocialIcon bgColor={'transparent'} network={buttonData.iconName} fgColor={'#fff'} style={{ height: 40, width: 40 }} />
 
                         return (
-                            <Button key={'social_btn_' + data.name} text={data.text} icon={icon} />
+                            <CustomButton key={'social_btn_' + buttonData.iconName} text={buttonData.text} icon={icon} clickHandler={(e) => window.open(buttonData.url)} />
                         )
                     })}
-
                 </div>
+
             </InfoWrap>
         </div>
     )
 }
 
-export default ContactContent
+const InfoWrap = ({ title, children }) => {
+    return (
+        <div className='flex-column w-50 h-100' style={{ marginTop: '96px' }}>
+            <h2 style={{ fontWeight: 500, fontSize: '1.3em', marginBottom: '12px' }}>{title}</h2>
+            {children}
+        </div>
+    )
+}
+

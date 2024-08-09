@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { GlobalCanvas, SmoothScrollbar } from '@14islands/r3f-scroll-rig';
 
 import SectionWrap from './components/main/section/sectionWrap';
@@ -7,29 +7,28 @@ import Footer from './components/main/footer/footer';
 import BackgroundAnim from './components/main/background/background';
 import NavPanel from './components/main/navPanel/navPanel';
 
-import Button from './components/functional/button/button';
-
-import './App.css';
-import ClientsContent from './components/content/client';
-import ContactContent from './components/content/contact';
+import { ClientSection } from './components/content/client';
+import { ContactContent } from './components/content/contact';
 import { PortfolioContent } from './components/content/portfolio';
 import { WhoAmIContent } from './components/content/whoami';
 import { HeroContent } from './components/content/hero';
 
+import './App.css';
 
 
-function App() {
+
+const App = () => {
   const [activeNav, setActiveNav] = useState(0)
 
   const sectionRefs = useRef([])
   const mainRef = useRef(null)
 
   const scrollToSection = (index) => {
-    const urlItems = ['home', 'services', 'portfolio', 'contact']
+    const hashItems = ['home', 'services', 'portfolio', 'contact']
 
     setActiveNav(index)
     sectionRefs.current[index].scrollIntoView({ behavior: 'smooth' })
-    window.location.hash = urlItems[index]
+    window.location.hash = hashItems[index]
 
   }
 
@@ -47,18 +46,15 @@ function App() {
       <main ref={mainRef} className='flex flex-column '>
         <BackgroundAnim />
         <SmoothScrollbar >
-          {(bind) => (
 
-            <div {...bind} style={{ zIndex: 5 }}>
+          {(bind) => (
+            <div {...bind}>
               <SectionWrap ref={(el) => { sectionRefs.current[0] = el }} sectionStyle={{ height: '910px' }}>
 
                 <Header />
                 <HeroContent scrollToSection={scrollToSection} />
 
               </SectionWrap>
-
-
-
 
               <SectionWrap name={'KDO JSEM?'} title='Jsem architekt věnující se digitální tvorbě, CGI a programmingu' sectionStyle={{ ...sectionStyleOverride, height: '910px' }} >
 
@@ -73,7 +69,7 @@ function App() {
               </SectionWrap>
 
               <SectionWrap name={'CO ŘÍKAJÍ KLIENTI?'} fullWidth contentStyle={{ margin: '64px 0 150px 0' }}>
-                <ClientsContent />
+                <ClientSection />
               </SectionWrap>
 
 
@@ -99,7 +95,5 @@ function App() {
     </>
   )
 }
-
-
 
 export default App

@@ -1,15 +1,7 @@
-import { Tilt } from "react-tilt"
+import { BlurCard } from "../functional/blurCard"
+import { TiltWrap } from "../functional/tiltWrap"
 
 export const WhoAmIContent = () => {
-    const tiltOptions = {
-        reverse: true,
-        max: 15,
-        perspective: 1800,
-        speed: 500,
-        scale: 1,
-        transition: true,
-        reset: true
-    }
 
     const cardsData = [
         {
@@ -29,33 +21,38 @@ export const WhoAmIContent = () => {
         }
     ]
 
-
     return (
-
         <div className='flex flex-align-end w-100' style={{ gap: '32px', marginTop: '96px' }}>
-
             {cardsData.map((dataObj, index) => {
                 return (
-                    <Tilt key={'info_card_' + index} options={tiltOptions} className={'flex-column w-100'} style={{ aspectRatio: '2.2/3', background: 'rgba(0, 0, 0, 0.3)', borderRadius: '15px', backdropFilter: 'blur(100px)', padding: '48px', marginBottom: index === 1 && '96px', boxShadow: 'rgba(0,0,0,.4) 12px 12px 12px' }}>
-                        <h3 style={{ fontWeight: 500, fontSize: '1.3em', marginBottom: '32px' }}>{dataObj.name}</h3>
-                        <p style={{ marginBottom: '40px' }}>
-                            {dataObj.text}
-                        </p>
-
-                        <ul className='flex-column' style={{ margin: 0, padding: 0, lineHeight: '40px' }}>
-                            {dataObj.points.map((point, index) => {
-                                return (
-                                    <li style={{
-                                        all: 'unset',
-                                        fontWeight: 200
-                                    }} key={`card_${dataObj.name}_${index}`}>{point}</li>
-                                )
-                            })}
-                        </ul>
-                    </Tilt >
+                    <ServiceCard key={'service_card_' + index} name={dataObj.name} text={dataObj.text} points={dataObj.points} cardIndex={index} />
                 )
             })}
         </div >
+    )
+}
 
+const ServiceCard = ({ name, text, points, cardIndex }) => {
+    return (
+        <TiltWrap style={{ marginBottom: cardIndex === 1 && '96px' }}>
+            <BlurCard style={{ alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+
+                <h3 style={{ fontWeight: 500, fontSize: '1.3em', marginBottom: '32px' }}>{name}</h3>
+                <p style={{ marginBottom: '40px' }}>
+                    {text}
+                </p>
+
+                <ul className='flex-column' style={{ margin: 0, padding: 0, lineHeight: '40px' }}>
+                    {points.map((point, index) => {
+                        return (
+                            <li style={{
+                                all: 'unset',
+                                fontWeight: 200
+                            }} key={`card_${name}_${index}`}>{point}</li>
+                        )
+                    })}
+                </ul>
+            </BlurCard>
+        </TiltWrap>
     )
 }

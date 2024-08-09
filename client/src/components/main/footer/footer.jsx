@@ -1,4 +1,4 @@
-import Button from "../../functional/button/button"
+import { CustomButton } from "../../functional/button"
 import './footer.css'
 
 const Footer = ({ scrollToSection }) => {
@@ -8,7 +8,7 @@ const Footer = ({ scrollToSection }) => {
 
             <div className='w-100 footer-content flex flex-justify-between flex-align-center'>
                 <p> 2024 © Jiří Honzák</p>
-                <Button text='scroll up' filled clickHandler={() => scrollToSection(0)} />
+                <CustomButton text='scroll up' filled clickHandler={() => scrollToSection(0)} />
 
             </div>
 

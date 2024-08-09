@@ -1,4 +1,4 @@
-const Button = ({ text, icon, filled, inversed, clickHandler, styleOverride }) => {
+export const CustomButton = ({ text, icon, filled, inversed, clickHandler, styleOverride }) => {
     const buttonStyle = {
         all: 'unset',
         background: filled ? inversed ? '#262626' : '#fff' : null,
@@ -18,4 +18,3 @@ const Button = ({ text, icon, filled, inversed, clickHandler, styleOverride }) =
     )
 }
 
-export default Button
