@@ -80,7 +80,7 @@ const App = () => {
               </SectionWrap>
 
 
-              <SectionWrap ref={(el) => { sectionRefs.current[3] = el }} name={'KONTAKT'} title={"Máte zájem o spolupráci?\n Neváhejte mě kontaktovat!"} sectionStyle={{ height: '70vh' }}>
+              <SectionWrap ref={(el) => { sectionRefs.current[3] = el }} name={'KONTAKT'} title={"Máte zájem o spolupráci?\n Neváhejte mě kontaktovat!"}>
                 <ContactContent />
                 <Footer scrollToSection={scrollToSection} />
               </SectionWrap>

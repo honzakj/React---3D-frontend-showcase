@@ -43,8 +43,9 @@ const portfolioData = [{
 export const PortfolioContent = () => {
     useEffect(() => {
         //Tady by byl požadavek skrz API na data z databáze -> dynamický obsah
-        //Zároveň bych udělal state variable isLoading a navázal na ni animaci načítání
-        //prozatím hardcoded v portfolioData
+        //Zároveň bych v app.jsx udělal state variable isLoading a navázal na ni načítání dat z databáze a načítání obrázků
+        //Tím zajistím že se nebudou obrázky postupně nahrávat uživatli před očima -> smooth experience
+        //Projekty prozatím hardcoded v portfolioData
     }, [])
 
 

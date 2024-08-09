@@ -24,7 +24,7 @@ export const ContactContent = () => {
     ]
 
     return (
-        <div className='flex w-100 h-100'>
+        <div className='flex w-100 h-100' style={{ marginBottom: '96px' }}>
 
             <InfoWrap title={'Kontaktujte mě'}>
                 <p style={{ fontWeight: 300, marginBottom: '24px' }}>honzak.jirka@gmail.com</p>
