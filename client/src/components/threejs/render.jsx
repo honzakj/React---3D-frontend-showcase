@@ -26,29 +26,43 @@ export const RenderViewportScene = () => {
 }
 
 const RenderTrackedMesh = ({ scale, scrollState }) => {
-    const fbx = useFBX('models/people.fbx')
+    const fbx = useFBX('models/logo.fbx')
     const Material = new MeshNormalMaterial()
     const meshRef = useRef()
 
     useEffect(() => {
         fbx.children.forEach((meshRef) => {
             meshRef.material = Material
-            fbx.position.set(-160, -60, 150)
         })
 
     }, [meshRef])
 
+    const amplitudeY = 10;
+    const frequencyY = 0.5;
 
-    useFrame(() => (meshRef.current.rotation.y = -(scrollState.progress * Math.PI) + Math.PI / 2))
+    const amplitudeX = 6;
+    const frequencyX = 0.3;
+
+    const yOffsetOffset = Math.random() * Math.PI * 2;
+    const xOffsetOffset = Math.random() * Math.PI * 2;
+
+    useFrame(() => {
+        const time = performance.now() * 0.005;
+        const yOffset = amplitudeY * Math.sin(frequencyY * time + yOffsetOffset);
+        const xOffset = amplitudeX * Math.sin(frequencyX * time + xOffsetOffset);
+
+        meshRef.current.rotation.y = -(scrollState.progress * Math.PI) + Math.PI / 2
+        meshRef.current.position.y = yOffset;
+        meshRef.current.position.x = xOffset;
+    })
 
     return (
         <>
             <group >
-
                 <mesh ref={meshRef}>
                     <primitive object={fbx} />
                 </mesh>
-                <PerspectiveCamera fov={45} position={[150, 250, 900]} makeDefault onUpdate={(self) => self.lookAt(0, 0, 0)} />
+                <PerspectiveCamera fov={45} position={[-250, 250, 900]} makeDefault onUpdate={(self) => self.lookAt(0, 0, 0)} />
             </group>
         </>
     )

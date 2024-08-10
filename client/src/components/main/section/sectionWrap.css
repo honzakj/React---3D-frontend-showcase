@@ -1,6 +1,7 @@
 section {
     position: relative;
     overflow-x: hidden;
+    padding: 0 48px;
 }
 
 .section-name {

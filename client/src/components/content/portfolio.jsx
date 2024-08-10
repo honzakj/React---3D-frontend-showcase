@@ -32,8 +32,8 @@ const portfolioData = [{
     projectCategory: 'Architektura',
     projectDescription: 'lorem ipsum'
 }, {
-    projectName: 'Terminál kavárny',
-    imgSrc: "img/cafeRobot.jpg",
+    projectName: 'Terminál robotické kavárny',
+    imgSrc: "img/robot.jpg",
     projectCategory: 'UI/UX',
     projectDescription: 'lorem ipsum'
 },
