@@ -15,6 +15,7 @@ A visually stunning and interactive React portfolio website showcasing my skills
 - Responsive design for mobile and tablets (To be implemented)
 - Multilingual Support (To be implemented)
 - Full portfolio page (To be implemented)
+- Imgs and 3D models optimisation (To be implemented)
 
 #### Known Bugs:
 - horizontal slideshow - double time for first item (jump between last and first)
