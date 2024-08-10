@@ -41,11 +41,15 @@ Start the development server to view your portfolio application in the browser:
 ```
 npm start
 ```
+Note that this command will expose the app to public net as well as your localhost. If you do not want that run this instead:
+```
+npm dev
+```
 This command will typically launch your portfolio at http://localhost:3000/ (the exact URL might vary depending on your setup).
 
 
 ##### Known Bugs:
-
+- horizontal slideshow - double time for first item (jump between last and first)
 
 ##### Essential:
 - react: The core React library for building user interfaces.
