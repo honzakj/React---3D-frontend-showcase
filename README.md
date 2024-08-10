@@ -1,7 +1,7 @@
 # React - 3D frontend skill showcase
 ### Description:
 A visually stunning and interactive React portfolio website showcasing my skills and experience.  
-<br>
+<br><br>
 
 #### Features:
 - Modern Design: A clean desktop layout.
