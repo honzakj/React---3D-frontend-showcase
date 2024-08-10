@@ -15,6 +15,10 @@ A visually stunning and interactive React portfolio website showcasing my skills
 - Multilingual Support (To be implemented)
 - Full portfolio page (To be implemented)
 
+##### Known Bugs:
+- horizontal slideshow - double time for first item (jump between last and first)
+
+
 
 ##### Development Setup:
 
@@ -26,7 +30,7 @@ Node.js (version 16 or later) and npm (version 5.6 or later) installed on your s
 
 Clone this repository to your local machine using Git.
 ```
-git clone https://github.com/honzakj/your-portfolio.git
+git clone https://github.com/honzakj/React---3D-frontend-showcase.git
 ```
 
 ###### Install Dependencies:
@@ -41,17 +45,19 @@ Start the development server to view your portfolio application in the browser:
 ```
 npm start
 ```
-Note that this command will expose the app to public net as well as your localhost. If you do not want that run this instead:
+Note that this command will expose the app to public net as well as your localhost.
+If you do not want that run this instead:
 ```
 npm dev
 ```
-This command will typically launch your portfolio at http://localhost:3000/ (the exact URL might vary depending on your setup).
+This command will typically launch your portfolio at http://localhost:3000/ 
+(the exact URL might vary depending on your setup).
 
 
-##### Known Bugs:
-- horizontal slideshow - double time for first item (jump between last and first)
 
-##### Essential:
+##### Dependencies
+
+###### Essential:
 - react: The core React library for building user interfaces.
 - react-dom: Allows rendering React components in the browser.
 - react-icons: Provides a wide variety of icons for enhancing your portfolio's design.
@@ -63,8 +69,7 @@ This command will typically launch your portfolio at http://localhost:3000/ (the
 - @react-three/drei: Offers additional utilities and components for Three.js.
 - @14islands/r3f-scroll-rig: Creates smooth 3D scrolling effects. 
 
-
-##### Development:
+###### Development:
 - @types/react: Type definitions for React, improving code clarity and safety.
 - @types/react-dom: Type definitions for React DOM.
 - @vitejs/plugin-react: Vite plugin for React integration.
