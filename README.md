@@ -1,6 +1,6 @@
 #### React - 3D frontend skill showcase
 ##### Description:
-A visually stunning and interactive React portfolio website showcasing my skills and experience. This app is designed to impress potential employers and collaborators.
+A visually stunning and interactive React portfolio website showcasing my skills and experience. 
 
 ##### Features:
 - Modern Design: A clean desktop layout.
@@ -13,12 +13,13 @@ A visually stunning and interactive React portfolio website showcasing my skills
 - Content Management System (CMS) (To be implemented)
 - Responsive design for mobile and tablets (To be implemented)
 - Multilingual Support (To be implemented)
+- Full portfolio page (To be implemented)
+
 
 ##### Development Setup:
 
 ###### Prerequisites:
 Node.js (version 16 or later) and npm (version 5.6 or later) installed on your system. You can verify these by running node -v and npm -v in your terminal.
-A code editor of your choice (e.g., Visual Studio Code, Sublime Text, Atom).
 
 
 ###### Clone the Repository:
@@ -31,6 +32,7 @@ git clone https://github.com/honzakj/your-portfolio.git
 ###### Install Dependencies:
 Open a terminal in the project directory and run:
 ```
+cd client
 npm install
 ```
 
