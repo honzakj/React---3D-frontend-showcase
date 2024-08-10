@@ -7,7 +7,7 @@ A visually stunning and interactive React portfolio website showcasing my skills
 - Interactive Elements: Engage visitors with animations, smooth transitions, and user-friendly interactions.
 - Project Showcase: Highlight your most impressive projects with detailed descriptions, screenshots, and links.
 - Clear Navigation: Seamlessly guide visitors through your website with a well-structured navigation bar.
-- Contact Information: Make it easy for potential employers to connect with you by providing your contact details. (To be implemented)
+- Contact Information: Make it easy for potential employers to connect with you by providing your contact details. 
 
 ##### Future Features:
 - Content Management System (CMS) (To be implemented)
@@ -22,21 +22,21 @@ A code editor of your choice (e.g., Visual Studio Code, Sublime Text, Atom).
 
 
 ###### Clone the Repository:
-```
+
 Clone this repository to your local machine using Git.
+```
+git clone https://github.com/honzakj/your-portfolio.git
 ```
 
 ###### Install Dependencies:
 Open a terminal in the project directory and run:
 ```
-Bash
 npm install
 ```
 
 ###### Start Development Server:
 Start the development server to view your portfolio application in the browser:
 ```
-Bash
 npm start
 ```
 This command will typically launch your portfolio at http://localhost:3000/ (the exact URL might vary depending on your setup).
