@@ -1,6 +1,7 @@
 # React - 3D frontend skill showcase
 ### Description:
-A visually stunning and interactive React portfolio website showcasing my skills and experience. 
+A visually stunning and interactive React portfolio website showcasing my skills and experience.  
+<br>
 
 #### Features:
 - Modern Design: A clean desktop layout.
@@ -53,7 +54,7 @@ npm dev
 This command will typically launch your portfolio at http://localhost:3000/ 
 (the exact URL might vary depending on your setup).
 
-
+<br>
 
 ### Dependencies
 
