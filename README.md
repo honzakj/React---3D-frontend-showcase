@@ -20,6 +20,7 @@ A visually stunning and interactive React portfolio website showcasing my skills
 - horizontal slideshow - double time for first item (jump between last and first)
 
 
+<br><br>
 
 ### Development Setup:
 
@@ -54,7 +55,7 @@ npm dev
 This command will typically launch your portfolio at http://localhost:3000/ 
 (the exact URL might vary depending on your setup).
 
-<br>
+<br><br>
 
 ### Dependencies
 
